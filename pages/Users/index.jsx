@@ -42,7 +42,7 @@ export default function Users({ users }) {
         {
           !users ? "Cargando..." :
             users.map(user => {
-              return <Card className={classes.root}>
+              return <Card key = {user.id} className={classes.root}>
                 <CardActionArea>
                   <CardMedia
                     component="img"

@@ -10,24 +10,30 @@ import Typography from '@material-ui/core/Typography';
 import Head from "next/dist/next-server/lib/head"
 import Navbar from "../../Components/Navbar"
 
+const useStyles = makeStyles({
+    root: {
+        minWidth: 275,
+        maxWidth: 300,
+        margin: 16,
+        display: 'inline',
+        float: 'left'
+    },
+    bullet: {
+        display: 'inline-block',
+        margin: '0 2px',
+        transform: 'scale(0.8)',
+    },
+    title: {
+        fontSize: 14,
+    },
+    pos: {
+        marginBottom: 12,
+    },
+});
+
 export default function Posts({ posts }) {
 
     const classes = useStyles();
-    
-    //Client side rendering
-    /* const [posts, setPosts] = useState([]);
-
-    useEffect(() => {
-
-        const fetchPosts = async () => {
-            const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
-            const newPosts = await res.json();
-            setPosts(newPosts);
-        }
-
-        fetchPosts();
-
-    }, []); */
 
     return (
         <div>
@@ -38,7 +44,7 @@ export default function Posts({ posts }) {
             <div className="m-4">
                 <h1>Posts page O-O</h1>
             </div>
-            <div className={classes.container}>
+            <div className="m-4">
 
                 {
                     !posts ? "Cargando..." :
@@ -82,26 +88,3 @@ export async function getServerSideProps() {
 
 }
 
-const useStyles = makeStyles({
-    container: {
-        display: 'grid',
-        gridTemplateColumns: '25% 25% 25% 25%',
-        margin: 22
-    },
-    root: {
-        minWidth: 275,
-        maxWidth: 300,
-        margin: 20
-    },
-    bullet: {
-        display: 'inline-block',
-        margin: '0 2px',
-        transform: 'scale(0.8)',
-    },
-    title: {
-        fontSize: 14,
-    },
-    pos: {
-        marginBottom: 12,
-    },
-});
