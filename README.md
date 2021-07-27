@@ -3,12 +3,16 @@
 ## Pre-requisitos
 - Node v10.19.0
 
-### Instalación
+### Instalación y ejecución
 
 ```
-git clone https://github.com/FloresZamoraIthanAdrian/Nextjs-SSR-example
+> git clone https://github.com/FloresZamoraIthanAdrian/Next.js-SSR-example
 
+> cd Next.js-SSR-example/
 
+> npm install
+
+> npm next
 ```
 
 ### Construido con 
